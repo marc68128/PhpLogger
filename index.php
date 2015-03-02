@@ -37,6 +37,16 @@ else{
 
     $sql = 'SELECT * FROM Log';
     $result = $conn->query($sql);
+    $list = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+           $list[$i] = $row;
+            $i++;
+        }
+    } else {
+        echo "0 results";
+    }
 ?>
 
     <!doctype html>
